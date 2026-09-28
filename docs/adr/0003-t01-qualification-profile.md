@@ -29,7 +29,7 @@ At admission, bind all of the following:
 - immutable target repository ID, staging repository ID, and base commit SHA;
 - one allowlisted Markdown file path and the identified link occurrence;
 - owner-authored intent revision, acceptance criteria, and exact action grant;
-- requested and provider-resolved model profile/metadata where available, tool-schema version, checker version, runner image/runtime digest, and artifact policy;
+- requested model profile at admission, with provider-resolved response metadata attached to the immutable provider receipt when available; tool-schema version, checker version, runner image/runtime digest, and artifact policy;
 - maximum input/output tokens, provider-call count, wall time, changed bytes, and expiry;
 - owner-approved, versioned provider data-use consent and repository automation profile digests;
 - a reserved operation identity for each provider call and repository write.
@@ -134,12 +134,12 @@ The resource lease is released only after the runner supervisor proves the full 
 | Downstream automation | Prohibited workflow/integration profile is denied before any external write; accepted profile digest is revalidated and recorded |
 | Finalization | Duplicate/conflicting finalization, unknown effects, missing artifact proof, incomplete runner cleanup, budget settlement, and lease-release cases are atomic and fenced |
 | Maintained triggers | Duplicate/stale/out-of-order trigger, downtime without burst, paused/revoked/expired intent, budget/run/no-progress cap, unknown effect, and exclusive-resource cases are evidenced against a synthetic source |
-| Runner transport | Version mismatch, unauthenticated assignment, replay/conflict, lost ack/reconnect, bounded-spool overflow and backpressure preserve database authority |
+| Runner transport | Version mismatch, unauthenticated assignment, replay/conflict, lost ack/reconnect, bounded-spool overflow/corruption and backpressure preserve database authority |
 | End-to-end pilot | Owner-approved task and exact patch digest; one staging commit; one target draft PR; deterministic validation and complete provenance/budget receipt |
 
 Build, typecheck, or static CI results alone do not satisfy runtime qualification. Each result must identify the exact host/runtime/profile, test inputs, observed result, and remaining limitations. No live provider or GitHub qualification is claimed by this proposal.
 
-The qualification record includes a versioned case manifest with case ID, invariant, fixture/data digest, expected evidence, exact source/profile/host revision, and pre-registered repetition count where repetition is meaningful. Each case is reported as `pass`, `fail`, `skipped`, or `inconclusive`, with observed count, denominator, and a reason for missing evidence; aggregate pass rates never hide skipped or inconclusive cases. The semantic repair verdict (the selected destination satisfies the owner-authored rubric and deterministic path checks) is recorded separately from authorization and policy decisions. A semantic pass cannot create authority, and an authorized action cannot be reported as a correct repair without semantic evidence.
+The qualification record includes a versioned case manifest with case ID, invariant, fixture/data digest, expected evidence, exact source/profile/host revision, and pre-registered repetition count where repetition is meaningful. Freeze the manifest before execution, store its digest, and bind every result to that digest. Each case is reported as `pass`, `fail`, `skipped`, or `inconclusive`, with observed count, denominator, and a reason for missing evidence; aggregate pass rates never hide skipped or inconclusive cases. The semantic repair verdict (the selected destination satisfies the owner-authored rubric and deterministic path checks) is recorded separately from authorization and policy decisions, and includes the owner rubric digest and identity of the authorized assessor. A semantic pass cannot create authority, and an authorized action cannot be reported as a correct repair without semantic evidence.
 
 ## Owner decisions before implementation qualification
 
