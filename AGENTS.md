@@ -17,6 +17,8 @@ Read `SPEC.md`, `docs/IMPLEMENTATION.md`, and the current milestone before chang
 
 The normal loop is: inspect task and context, implement locally, run `pnpm verify`, inspect the diff, make a small atomic commit, then sync to GitHub when useful. Read `docs/DEVELOPMENT.md` for the canonical workflow.
 
+These local-first instructions supersede earlier workflow text that required Issues, topic branches, PRs, or remote CI for routine changes. Historical review bundles and stale branches may retain that wording; follow the current `main` policy while complying with protections actually enforced by GitHub.
+
 - Do not create a GitHub issue, branch, PR, or remote-CI wait for routine work. Use them when they materially improve durable tracking, isolation, external review, coordination, or release confidence.
 - Direct commits to `main` are allowed by the current ruleset after local verification. Preserve linear history; never force-push, delete protected branches, or bypass a rule. If GitHub changes a protection so a direct update is blocked, comply unless the project owner explicitly authorizes a legitimate rule change.
 - Before committing, run `pnpm verify`, inspect `git status` and the full diff, run `git diff --check` and `git diff --cached --check`, and exclude generated output, secrets, unrelated user/agent work, and debug artifacts. Commit one coherent change with a descriptive message.
@@ -36,6 +38,8 @@ No repository license has been chosen. Obtain a license decision before publishi
 ## Matt Pocock engineering skills
 
 For every Matt Pocock skill used in this repository, follow the autonomous execution contract in `docs/agents/skill-autonomy.md`. Do not stop for a routine interview, plan approval, ticket-granularity vote, tracker choice, or PR confirmation.
+
+Consequential development decisions are delegated to the independent agent board in `docs/agents/decision-board.md`. Do not ask the owner to resolve engineering or product-design choices within the approved project scope. If a decision needs authority not already granted, record HOLD, keep that capability disabled, and continue independent work. This development delegation does not change runtime owner grants or authorize spending, external effects, release, or destructive operations.
 
 ### Issue tracker
 

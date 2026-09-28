@@ -5,10 +5,10 @@ This ticket set applies the Matt Pocock grilling and to-tickets workflows to T01
 ## Authority and scope
 
 - The normative requirements come from SPEC.md and docs/tasks/T01-intent-execution.md.
-- GitHub Issue #4 remains the parent record for the bounded live pilot and its owner decisions. This plan does not modify that issue.
+- GitHub Issue #4 remains the parent record for the bounded live pilot and its authority gates. This plan does not modify that issue.
 - The revision 0.6 profile described by open PR #5 is a proposal, not an approved operational profile. Do not treat its candidate model, target/staging repositories, permission split, sandbox, freeze, or other profile details as selected.
-- The first eight tickets use synthetic identities, fixtures, and fake effect adapters. They must not enable a live provider, repository write, or candidate execution outside a qualified profile.
-- Ticket 09 remains blocked until the required owner decisions and runtime evidence are recorded. No credentials or private workspace data belong in this plan.
+- Proposed board disposition for tickets 01–08: a zero-spend, fixture-only path using synthetic identities and repository fixtures, fake model/repository adapters, no credentials, no external writes, and no candidate execution on an unqualified host.
+- Ticket 09 does not wait for owner answers. It may begin only if an existing standing grant covers the live scope; producing runtime qualification evidence is its deliverable. No live effect occurs before its required evidence passes. If the grant is absent, record HOLD and continue without prompting.
 
 ## Grill result
 
@@ -27,9 +27,9 @@ This ticket set applies the Matt Pocock grilling and to-tickets workflows to T01
 - Make fixture-only execution impossible to configure as a live provider or repository writer. Production-facing endpoints remain deny-by-default until real authentication and an approved profile are qualified.
 - Keep the work in the existing modular control application and PostgreSQL design. Do not add a new queue, service, or database without evidence that the current design cannot meet a requirement.
 
-### Owner decisions still open
+### Live-profile authority still unavailable
 
-Issue #4 records the current list: target repository, file, broken link, and correctness rubric; staging boundary, App permissions, and enforceable freeze; provider, model, credential custody, spend limit, and data-use/retention choices; host and sandbox profile; principal enrollment and repository settings; and any permitted notifications. These cannot be inferred safely. The live capability remains disabled until the owner records the decisions and qualification evidence.
+Issue #4 records the live profile questions: target repository, file, broken link, and rubric; staging boundary, App permissions, and enforceable freeze; provider, model, credential custody, spend limit, and data-use/retention; host and sandbox; principal enrollment; repository settings; and notifications. The board cannot infer or create those grants. Proposed disposition: use local fixtures, fake adapters, no credentials, no spend, and no notifications while progressing all independent work. Under current authority, live capability stays disabled and the board records HOLD without asking the owner. If a standing grant later exists, T01-09 produces the required runtime evidence; it does not assume that evidence already exists.
 
 ## Dependency order
 
@@ -43,6 +43,6 @@ Issue #4 records the current list: target repository, file, broken link, and cor
 | [T01-06](06-broker-unknown-outcomes.md) | Exercise ordered effects and unknown outcomes through fake adapters | T01-05 |
 | [T01-07](07-operator-lifecycle-views.md) | Inspect approval, progress, evidence, spending, and unresolved outcomes | T01-01 through T01-06 |
 | [T01-08](08-synthetic-qualification.md) | Run the end-to-end synthetic acceptance profile and retain its evidence | T01-01 through T01-07 |
-| [T01-09](09-live-profile-qualification.md) | Qualify the owner-selected live pilot without expanding its grant | T01-08 and all Issue #4 owner gates |
+| [T01-09](09-live-profile-qualification.md) | Produce exact-profile qualification evidence under existing authority | T01-08 and an existing standing grant covering the live scope |
 
-Tickets 01–08 are ready for implementation only within their fixture-only boundaries. T01-09 is blocked on owner input and exact-host/provider/repository qualification. Acceptance criteria are future requirements; none are claimed as executed by this planning work.
+Tickets 01–08 are ready for implementation only within their fixture-only boundaries. T01-09 is currently held because no live scope is granted; when a valid grant exists, its work is to produce qualification evidence and keep effects disabled until the evidence gate passes. Acceptance criteria are future requirements; none are claimed as executed by this planning work.
