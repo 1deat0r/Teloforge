@@ -14,7 +14,9 @@ fn main() -> ExitCode {
             ExitCode::SUCCESS
         }
         None | Some("--help") | Some("-h") => {
-            println!("Teloforge runner scaffold\nUsage: teloforge-runner [--version | capabilities]\nAgent execution is not implemented.");
+            println!(
+                "Teloforge runner scaffold\nUsage: teloforge-runner [--version | capabilities]\nAgent execution is not implemented."
+            );
             ExitCode::SUCCESS
         }
         Some(_) => {

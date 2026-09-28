@@ -1,45 +1,24 @@
-# GitHub development standard
+# Optional GitHub workflow
 
-**Effective 28 September 2026.** The public Teloforge repository on GitHub is the canonical issue, source, review, CI, and merge record. The local checkout is for editing. A code change is not delivered until its GitHub pull request is merged.
+For routine development, follow the local-first [development workflow](DEVELOPMENT.md). GitHub issues, branches, and pull requests are tools to use when they add durable coordination, isolation, outside review, or release confidence; they are not required for ordinary changes.
 
-## Protected-branch rule
+## Current remote safeguards
 
-The initial import creates `main`. The active GitHub repository ruleset then requires every subsequent `main` change to arrive by pull request with current `Source CI / TypeScript` and `Source CI / Rust` checks. It dismisses stale reviews, requires review threads to be resolved, requires linear history, blocks force-push and branch deletion, and defines no bypass actors. Squash merge is the only allowed merge strategy. GitHub's branch ruleset is the enforcement mechanism; this policy and the checked-in `.github/rulesets/main.json` describe the intended state.
+The active `main` ruleset is documented in `.github/rulesets/main.json`. It preserves linear history and prevents branch deletion, force-push, and bypass. Direct fast-forward commits are permitted after `pnpm verify`. Remote CI still runs on pushes to `main`, PRs, and manual dispatch as a clean-environment check. A CI failure is investigated and repaired; it does not make remote CI the local development loop.
 
-GitHub supports native review counts and code-owner approvals, but there is one human maintainer and no reviewer team or review App connected at setup. A required independent human approval would make owner-authored PRs unmergeable. For now the native review count is zero, `CODEOWNERS` routes review requests to the maintainer, and the mandatory independent-agent protocol below is enforced by maintainers against the PR evidence. Do not claim GitHub technically validates an agent report. Add native review enforcement once a genuine independent GitHub reviewer/App is configured. Ruleset bypass remains disabled.
+Change repository rules only with the project owner's authorization. Keep the checked-in ruleset synchronized with the live GitHub ruleset using `scripts/github/apply-main-ruleset.sh`. Do not weaken credential, runner, release, or data-security boundaries as part of workflow simplification.
 
-## Issue, branch, PR
+## Issues and pull requests
 
-- Put all milestones and work on GitHub issues. Issues state intent/outcome, scope, acceptance criteria, non-goals, risks, dependent T01–T04 milestone, and owner.
-- Use a branch tied to an issue. Keep one conceptual change per PR and rebase/update against current `main` as required by strict CI.
-- Use `.github/pull_request_template.md`. Attach UI screenshots only when a visual change needs them; don't attach secrets or private data.
-- Squash merge the approved PR on GitHub. Reference the issue with `Closes #N`. GitHub CI and reviews must reference the final head SHA, not an earlier version.
-- Update docs and status in the same PR as the behavior they describe. Do not rewrite the hash-pinned historical `docs/approved/` bundle; add new design revisions alongside it.
+Use an Issue for long-lived backlog, cross-session dependencies, multi-agent coordination, external reports, or discussions that need a durable shared record. Use a PR for changes that benefit from isolation or deliberate review, external contributions, elevated-risk decisions, or explicit user/product requirements. Blank issues and direct commits are allowed.
 
-## Independent expert-agent protocol
+When opening a PR, include the relevant task/context, local `pnpm verify` result, final commit, risk rationale, and any independent review findings. Treat agent feedback as analysis, not a GitHub human approval or runtime qualification. Continue independent local work while remote checks run.
 
-Review is a separate evaluation track from implementation. The authoring agent cannot count its own assessment as a review. Dispatch reviewers with separate tasks and pinned paths/commit SHA. Collect their initial verdicts before exposing any peer rationale. Select different model variants where available; note that several model variants do not constitute independent human or provider certification.
+## Remote workflow safety
 
-Every PR:
+- Keep workflow actions pinned to full commit SHAs and use the least permissions needed. Untrusted pull request code runs with read-only permissions through `pull_request`; never execute fork code under `pull_request_target` with write credentials.
+- Do not auto-merge dependency or agent-generated changes. Investigate remote-only failures and update action pins deliberately.
+- Keep credentials, private prompts, workspace data, host paths, and tokens out of commits and logs. Report sensitive vulnerabilities through GitHub's private reporting channel rather than a public issue.
+- The repository has no selected license. Do not describe it as open source or merge outside contributions until distribution and contribution terms are recorded.
 
-1. **Domain/systems seat:** checks behavior, failure handling, compatibility, dependencies, and acceptance criteria.
-2. **Adversarial seat:** tries to reject the change; checks authority, data scope, poisoning, secrets, unsafe inputs, concurrency and recovery as relevant.
-
-The five-seat gate also applies before merging changes to product/spec architecture; intent/grant/budget admission; broker/effect policy; tenancy or provenance; evaluator datasets, graders, receipts or exposure; promotion, canaries or rollback; protocol/runner isolation; production schema migration; and security boundaries. The seats are domain/systems, evaluation/statistics, adversarial, product/operability, and a cold final integration read. The cold reader was not exposed to earlier reports.
-
-Every report names the exact head commit and contains BUILD / CONDITIONAL / REJECT, numbered material blockers with locations and closure conditions, separate nonblocking notes, source/check evidence, and explicit UNVERIFIED limits. Material blockers stop merge. A confirmed blocker is fixed in the branch, all affected reviewers get the revised digest for a fresh vote, and each closure is quoted against the final source. Keep dissent and rejected rulings in the PR record. No reviewer is pressured to BUILD.
-
-Store reports in the GitHub PR record, preferably a single report comment/attachment or committed `docs/reviews/` report linked by the PR. Do not message a collaborator or post GitHub review/comment on someone's behalf without clear authorization. Never impersonate a reviewer or ask an agent for a GitHub login token.
-
-## Quality and safety gates
-
-- Current required CI checks are static compilation/build checks only. The absence of tests is visible, not waived. A feature PR should add an appropriate test suite in a later explicitly authorized implementation/verification task; do not claim the current pipeline provides runtime assurance.
-- Do not merge a release or self-improvement candidate using exploration evidence alone. Follow the sealed-set, registered-manifest, complete-accounting, ordered-decision, and bounded-canary gates in `SPEC.md`.
-- Actions use full commit-SHA pins. Pull requests run with read-only repository permissions, no deployment credentials, and `pull_request` triggers; never run fork code under `pull_request_target` with write secrets.
-- Use Dependabot PRs for dependency updates. Review action pins and their resolved changes; do not auto-merge dependency or agent-generated changes.
-- Keep sensitive security reports in GitHub's private vulnerability reporting when available, never in a public issue. No credentials, tokens, private task data, personal file paths, or host identifiers go into commits or logs.
-- This repository has no selected distribution license. Public visibility is not a project license decision. No external patches may be merged until contributor rights and distribution terms are settled.
-
-## Bootstrap and exceptional downtime
-
-The initial import is the sole direct push to `main` and is recorded in Git history. Configure and verify the ruleset immediately after the CI check contexts exist. All later changes must use pull requests. If GitHub is unavailable, local work may be prepared but remains pending and is not merged/delivered outside the GitHub record.
+The GitHub Issue and PR templates remain available for these cases. They do not make either workflow mandatory.

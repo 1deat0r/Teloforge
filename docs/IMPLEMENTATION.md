@@ -2,6 +2,8 @@
 
 Baseline: S00, 28 September 2026. This inventory describes delivered source, not observed runtime results. No application build, typecheck, automated test, database migration, runner execution, provider call, or benchmark was run during scaffold creation.
 
+Verification update, 29 September 2026: `pnpm verify` passed locally. It built the TypeScript workspaces, typechecked and bundled the console, checked Rust formatting, and checked the Rust workspace. The repository still has no automated unit or integration test suite. This source-level verification does not run or qualify the application, runner, provider integrations, persistence, or agent execution.
+
 ## What exists
 
 | Path | Delivered source | Remaining work |

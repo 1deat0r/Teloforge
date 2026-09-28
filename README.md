@@ -4,13 +4,14 @@
 
 Specify an outcome, its acceptance criteria, authority, and resource limits. Teloforge's intended execution loop pursues that outcome; a separately governed improvement loop evaluates better contexts, skills, routing, and workflows before releasing them.
 
-**Status: project specification and scaffold, 28 September 2026.** A fresh five-expert board approved the consolidated project specification (project-r2 / spec 0.3) after two rounds, with all material findings resolved. See the [review record](docs/reviews/BOARD.md). This source scaffold has not been built, executed, or tested and has no production agent execution. No improvement over Paperclip has been measured.
+**Status: project specification and scaffold.** A fresh five-expert board approved the consolidated project specification (project-r2 / spec 0.3) after two rounds, with all material findings resolved. See the [review record](docs/reviews/BOARD.md). The original scaffold handoff did not include build or runtime evidence; the current local verification status is recorded in [implementation status](docs/IMPLEMENTATION.md). Teloforge has no production agent execution, and no improvement over Paperclip has been measured.
 
-The [public GitHub repository](https://github.com/1deat0r/Teloforge) is the canonical project location. See [project location](docs/PROJECT_LOCATION.md).
+The [public GitHub repository](https://github.com/1deat0r/Teloforge) is the canonical source location for backup, synchronization, optional tracking/review, and releases. Local development is the normal inner loop. See [project location](docs/PROJECT_LOCATION.md) and [development workflow](docs/DEVELOPMENT.md).
 
 ## Start here
 
 - [Full project specification](SPEC.md)
+- [Agent context map](CONTEXT-MAP.md)
 - [Interactive Archify architecture](docs/approved/teloforge-architecture.html)
 - [Development setup](docs/DEVELOPMENT.md)
 - [Implementation status and module map](docs/IMPLEMENTATION.md)
@@ -71,15 +72,16 @@ Use the pinned tool versions in [dependencies](docs/DEPENDENCIES.md), then from 
 ```sh
 cp .env.example .env
 pnpm install --frozen-lockfile --ignore-scripts
+pnpm verify
 pnpm dev
 ```
 
 The intended local addresses are `http://127.0.0.1:4100` for the control bootstrap and `http://127.0.0.1:5173` for the console. `/readyz` deliberately returns 503. The console displays static scaffold capabilities and does not establish server readiness. PostgreSQL is optional for this scaffold because persistence is not connected.
 
-See [development](docs/DEVELOPMENT.md) for build commands and the separate Rust runner command. The setup commands above are instructions for a future run; the scaffold delivery did not execute them.
+See [development](docs/DEVELOPMENT.md) for the canonical verification command and the separate Rust runner command.
 
 ## First implementation slice
 
-[T01](docs/tasks/T01-intent-execution.md): persist a revisioned intent, enforce its grants and budget in atomic admission, and complete one repository-maintenance task through a qualified adapter with durable action receipts. Reviewable pull requests are the initial deliverable; automatic merging and deployment require additional authority.
+[T01](docs/tasks/T01-intent-execution.md): persist a revisioned intent, enforce its grants and budget in atomic admission, and complete one repository-maintenance task through a qualified adapter with durable action receipts. A reviewable pull request is a product outcome for that task; it does not make PRs mandatory for Teloforge's own routine development. Automatic merging and deployment require additional authority.
 
 Teloforge is a working name. Package, domain, and trademark availability are unverified. The public repository currently has no license file; package manifests are marked `UNLICENSED`. Distribution and contribution terms remain undecided, so do not treat the repository as open source.

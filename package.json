@@ -16,6 +16,9 @@
     "build:ts": "pnpm --recursive --filter !@teloforge/console run build",
     "build": "pnpm run build:ts && pnpm --filter @teloforge/console run build",
     "typecheck": "pnpm run build:ts && pnpm --filter @teloforge/console run typecheck",
+    "verify:typescript": "pnpm run build",
+    "verify:rust": "cargo fmt --all -- --check && cargo check --workspace --locked",
+    "verify": "pnpm run verify:typescript && pnpm run verify:rust",
     "runner:capabilities": "cargo run --package teloforge-runner -- capabilities",
     "db:up": "docker compose --env-file .env -f infra/compose.yaml up -d postgres",
     "db:down": "docker compose --env-file .env -f infra/compose.yaml down"
