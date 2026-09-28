@@ -2,6 +2,8 @@
 
 Status: not implemented. Dependency: S00. Initial use case: a finite repository-maintenance change producing a reviewable PR under explicit authority. Merge and deployment are outside the initial grant.
 
+The dependency-ordered synthetic-first implementation slices are in [T01-slices](T01-slices/README.md). The local slices do not supersede open owner decisions in GitHub Issue #4 or approve the proposal in PR #5.
+
 ## Work
 
 1. Complete runtime schemas and migrations for authenticated principals, revisioned intents, grants, work/attempt identity, resource ownership, budgets, receipts, audit and outbox.
