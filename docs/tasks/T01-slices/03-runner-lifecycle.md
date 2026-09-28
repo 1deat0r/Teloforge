@@ -4,7 +4,7 @@
 
 **Blocked by:** T01-02.
 
-**Status:** ready-for-agent (synthetic transport only).
+**Status:** blocked by T01-01 dependency chain (synthetic transport only).
 
 - [ ] Commands and events bind to attempt identity, sequence, and lease generation; conflicting reuse is rejected.
 - [ ] Duplicate delivery is idempotent, event gaps or stale generations fence progress, and runner spool data is never treated as authoritative state.

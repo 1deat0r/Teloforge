@@ -4,7 +4,7 @@
 
 **Blocked by:** T01-01 through T01-07.
 
-**Status:** ready-for-agent (synthetic qualification only).
+**Status:** blocked by T01-01 through T01-07 dependency chain (synthetic qualification only).
 
 - [ ] The synthetic cohort covers valid and rejected admission, concurrent budget/resource conflicts, stale authority, idempotent replay, restart recovery, cancellation, and artifact failure.
 - [ ] Fault injection at every fake send boundary demonstrates no duplicate create, no successor after unknown/revocation/drift, and correct retained liability.

@@ -4,6 +4,8 @@ Baseline: S00, 28 September 2026. This inventory describes delivered source, not
 
 Verification update, 29 September 2026: `pnpm verify` passed locally. It built the TypeScript workspaces, typechecked and bundled the console, checked Rust formatting, and checked the Rust workspace. The repository still has no automated unit or integration test suite. This source-level verification does not run or qualify the application, runner, provider integrations, persistence, or agent execution.
 
+Decision update, 29 September 2026: the proposed T01-01 fixture intent API received three independent five-seat review rounds and ended in HOLD, with unresolved security and evaluation blockers. No product implementation was made. The control service remains scaffold-only, `/readyz` remains unavailable, and T01-02 through T01-08 are blocked by the T01-01 dependency chain. See `docs/decisions/2026-09-29-t01-01-implementation-hold.md`.
+
 ## What exists
 
 | Path | Delivered source | Remaining work |

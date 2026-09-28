@@ -4,7 +4,7 @@
 
 **Blocked by:** T01-01.
 
-**Status:** ready-for-agent (fixture-only; dispatch disabled).
+**Status:** blocked by T01-01 HOLD (fixture-only; dispatch disabled).
 
 - [ ] A stale revision, revoked or mismatched grant, changed action identity, expired approval, exhausted budget, or conflicting lease is denied.
 - [ ] Concurrent admission cannot overspend a controlled budget or claim the same exclusive resource.

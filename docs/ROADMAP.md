@@ -5,7 +5,7 @@ The r2 architecture review is complete. S00 supplies the project specification a
 | Milestone | Status | Dependency | Completion evidence |
 | --- | --- | --- | --- |
 | S00: project baseline | Files delivered; runtime unverified | Reviewed architecture | Spec, source layout, draft interfaces, archived review and local setup |
-| [T01: intent and execution](tasks/T01-intent-execution.md) | Ready for implementation planning | S00 | One bounded repository workflow and required authority/recovery evidence |
+| [T01: intent and execution](tasks/T01-intent-execution.md) | Implementation held at T01-01 after three board rounds; downstream slices blocked | S00 | Resolve the recorded T01-01 security/evaluation findings before fixture implementation |
 | [T02: baseline measurement](tasks/T02-baseline-measurement.md) | Pending | T01 | Cohort-complete costs/outcomes with repeatability and variance |
 | [T03: evolution and release](tasks/T03-evolution-release.md) | Pending | T02 | Independent registered experiment, trustworthy receipts, bounded canary and rollback |
 | [T04: extensions](tasks/T04-extension-qualification.md) | Deferred | Relevant T01–T03 gates | Qualified adapters or code releases with explicit supported guarantees |

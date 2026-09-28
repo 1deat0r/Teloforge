@@ -4,7 +4,7 @@
 
 **Blocked by:** T01-02 and T01-04.
 
-**Status:** ready-for-agent (fixture-only; no live approval authority).
+**Status:** blocked by T01-01 dependency chain (fixture-only; no live approval authority).
 
 - [ ] Approval is authenticated, scoped to the current owner/grant and expected intent revision, bound to one action digest, and expires.
 - [ ] A changed patch, destination, operation order, scope, or relevant authority epoch makes the prior approval unusable.

@@ -4,7 +4,7 @@
 
 **Blocked by:** T01-03.
 
-**Status:** ready-for-agent (synthetic artifacts only).
+**Status:** blocked by T01-01 dependency chain (synthetic artifacts only).
 
 - [ ] Finalized artifacts bind to the attempt, tenant, source snapshot, producer, content digest, and relevant action identity.
 - [ ] Collection rejects traversal, symlinks, hardlinks, special files, mount crossings, path substitution, and missing immutable-snapshot proof.

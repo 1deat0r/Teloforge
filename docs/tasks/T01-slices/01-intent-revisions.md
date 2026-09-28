@@ -2,9 +2,9 @@
 
 **What to build:** An operator can create and revise a finite intent in a synthetic tenant, then inspect its current revision and lifecycle state. The request is runtime-validated, recorded with its synthetic principal and audit history, and kept separate from work admission. Fixture identity is available only in an isolated development/test profile; no unauthenticated production path is introduced.
 
-**Blocked by:** None.
+**Blocked by:** Implementation decision HOLD; see [the board disposition](../../decisions/2026-09-29-t01-01-implementation-hold.md).
 
-**Status:** ready-for-agent (fixture-only).
+**Status:** held after three independent board rounds; fixture API remains unimplemented.
 
 - [ ] Invalid, incomplete, oversized, or unknown intent fields are rejected before domain state changes.
 - [ ] Creation and revision use expected-revision checks and retain actor, revision, and audit provenance durably.

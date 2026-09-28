@@ -4,7 +4,7 @@
 
 **Blocked by:** T01-01, T01-02, T01-03, T01-04, T01-05, and T01-06.
 
-**Status:** ready-for-agent (synthetic records only).
+**Status:** blocked by T01-01 dependency chain (synthetic records only).
 
 - [ ] Views show intent and action revisions, budgets, reservations, lease state, artifact provenance, and ordered effect status.
 - [ ] Pause request, cancellation request, confirmed stop, cleanup pending, successful completion, failed/stopped execution, unknown external outcome, and awaiting human review are distinct.

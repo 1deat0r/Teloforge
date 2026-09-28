@@ -4,7 +4,7 @@
 
 **Blocked by:** T01-05.
 
-**Status:** ready-for-agent (fake adapters only).
+**Status:** blocked by T01-01 dependency chain (fake adapters only).
 
 - [ ] Each send is durably claimed with its request binding, authority check, budget reservation, audit entry, and outbox state before dispatch.
 - [ ] A successor is eligible only after its predecessor is verified applied and current authority, digest, expected state, and freeze checks still hold.
