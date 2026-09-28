@@ -1,0 +1,14 @@
+{
+  "name": "@teloforge/evolution-lab",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "@teloforge/contracts": "workspace:*"
+  }
+}

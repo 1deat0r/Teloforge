@@ -1,0 +1,3 @@
+# Maintainer routing only. The repo's strict ruleset enforces PRs and CI;
+# independent expert-agent reports are a separate merge-policy requirement.
+* @1deat0r

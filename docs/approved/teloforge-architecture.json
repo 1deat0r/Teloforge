@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Teloforge — Intent and Continuous Improvement",
+    "locale": "en",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "intent-contract",
+      "type": "frontend",
+      "label": "Intent contract",
+      "sublabel": "outcome · limits · authority",
+      "pos": [
+        40,
+        65
+      ],
+      "size": [
+        225,
+        82
+      ]
+    },
+    {
+      "id": "durable-context",
+      "type": "database",
+      "label": "Durable state + context",
+      "sublabel": "PostgreSQL · versioned artifacts",
+      "pos": [
+        435,
+        65
+      ],
+      "size": [
+        225,
+        82
+      ]
+    },
+    {
+      "id": "evaluation-contract",
+      "type": "security",
+      "label": "Evaluation contract",
+      "sublabel": "fixed rubric · held-out cases",
+      "pos": [
+        830,
+        65
+      ],
+      "size": [
+        235,
+        82
+      ]
+    },
+    {
+      "id": "intent-planner",
+      "type": "backend",
+      "label": "Intent planner",
+      "sublabel": "replan · select approved bundle",
+      "pos": [
+        40,
+        290
+      ],
+      "size": [
+        225,
+        82
+      ]
+    },
+    {
+      "id": "governed-execution",
+      "type": "backend",
+      "label": "Governed execution",
+      "sublabel": "kernel · Rust runner · action broker",
+      "pos": [
+        435,
+        290
+      ],
+      "size": [
+        225,
+        82
+      ]
+    },
+    {
+      "id": "outcome-evaluator",
+      "type": "backend",
+      "label": "Outcome evaluator",
+      "sublabel": "accuracy · quality · time · cost",
+      "pos": [
+        830,
+        290
+      ],
+      "size": [
+        235,
+        82
+      ]
+    },
+    {
+      "id": "active-bundles",
+      "type": "database",
+      "label": "Active bundle registry",
+      "sublabel": "skills · context · routing · versions",
+      "pos": [
+        40,
+        535
+      ],
+      "size": [
+        225,
+        82
+      ]
+    },
+    {
+      "id": "promotion-gate",
+      "type": "security",
+      "label": "Promotion gate",
+      "sublabel": "quality floors · canary · rollback",
+      "pos": [
+        435,
+        535
+      ],
+      "size": [
+        225,
+        82
+      ]
+    },
+    {
+      "id": "evolution-lab",
+      "type": "backend",
+      "label": "Evolution lab",
+      "sublabel": "isolated candidates · capped search",
+      "pos": [
+        830,
+        535
+      ],
+      "size": [
+        235,
+        82
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "intent-input",
+      "from": "intent-contract",
+      "to": "intent-planner",
+      "label": "versioned intent",
+      "variant": "emphasis",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 65
+    },
+    {
+      "id": "admit-plan",
+      "from": "intent-planner",
+      "to": "governed-execution",
+      "label": "admit plan",
+      "variant": "emphasis"
+    },
+    {
+      "id": "commit-evidence",
+      "from": "governed-execution",
+      "to": "durable-context",
+      "label": "atomic records",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "observe-outcomes",
+      "from": "governed-execution",
+      "to": "outcome-evaluator",
+      "label": "outcome evidence",
+      "variant": "emphasis"
+    },
+    {
+      "id": "grading-contract",
+      "from": "evaluation-contract",
+      "to": "outcome-evaluator",
+      "label": "locked criteria",
+      "variant": "security",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 65
+    },
+    {
+      "id": "learning-feedback",
+      "from": "outcome-evaluator",
+      "to": "evolution-lab",
+      "label": "graded feedback",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelAt": [
+        1015,
+        422
+      ]
+    },
+    {
+      "id": "candidate-trials",
+      "from": "evolution-lab",
+      "to": "outcome-evaluator",
+      "label": "trial requests",
+      "variant": "dashed",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "labelAt": [
+        875,
+        485
+      ]
+    },
+    {
+      "id": "propose-release",
+      "from": "evolution-lab",
+      "to": "promotion-gate",
+      "label": "candidate + evidence",
+      "variant": "dashed"
+    },
+    {
+      "id": "release-version",
+      "from": "promotion-gate",
+      "to": "active-bundles",
+      "label": "gated release",
+      "variant": "security"
+    },
+    {
+      "id": "select-bundle",
+      "from": "active-bundles",
+      "to": "intent-planner",
+      "label": "approved versions",
+      "fromSide": "top",
+      "toSide": "bottom"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Intent guides the work",
+      "items": [
+        "Preserve user goals and authority; revise plans as evidence changes.",
+        "The v2 kernel owns state, budgets, external effects, and recovery."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Measure accepted outcomes",
+      "items": [
+        "Track quality, accuracy, latency, cost, and tokens by task class.",
+        "Include failed attempts, verification, retries, and learning spend."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Earn every promotion",
+      "items": [
+        "Compare against the current version on independent evaluation.",
+        "Keep useful tradeoffs; stage releases and roll back regressions."
+      ]
+    }
+  ]
+}

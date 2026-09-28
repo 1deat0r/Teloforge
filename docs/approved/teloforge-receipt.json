@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "output": "/home/its1deat0r/Documents/Codex/2026-09-28/ho/outputs/teloforge-architecture.html",
+  "specification": {
+    "path": "/home/its1deat0r/Documents/Codex/2026-09-28/ho/outputs/teloforge-architecture.json",
+    "sha256": "b3528d83a7c7166a8a6257d3e01074bdb36cc3749118fb19f434376ed0688983",
+    "bytes": 5420
+  },
+  "artifact": {
+    "path": "/home/its1deat0r/Documents/Codex/2026-09-28/ho/outputs/teloforge-architecture.html",
+    "sha256": "97b4cda9971ad319e76bc211db37ddb552ebee590097aa3ead70586aac7b6dc0",
+    "bytes": 810949
+  },
+  "validation": {
+    "checksPassed": 9,
+    "checkCount": 9,
+    "compositionProfile": "showcase",
+    "compositionStatus": "pass",
+    "errors": 0,
+    "warnings": 0
+  },
+  "browser_evidence": "passed",
+  "browser_receipt": "/home/its1deat0r/Documents/Codex/2026-09-28/ho/outputs/teloforge-architecture.visual-check.json",
+  "visual_review": "passed",
+  "correction_rounds": 0,
+  "visual_review_scope": {
+    "reviewer": "image-capable coordinating assistant and independent cold-read reviewer",
+    "coordinator_viewports": [
+      {
+        "width": 1440,
+        "height": 900,
+        "themes": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "width": 2048,
+        "height": 1320,
+        "themes": [
+          "light",
+          "dark"
+        ]
+      }
+    ],
+    "cold_review_viewports": [
+      {
+        "width": 1440,
+        "height": 900,
+        "theme": "light"
+      },
+      {
+        "width": 2048,
+        "height": 1320,
+        "theme": "dark"
+      }
+    ],
+    "notes": [
+      "No clipping or node/label overlap observed.",
+      "Small subtitles at 1440x900 and shared evaluator/lab duplex routing retained as nonblocking presentation notes.",
+      "Interactive search/focus/presentation/export flows not separately exercised."
+    ]
+  },
+  "board": {
+    "scope": "Working name and normative architecture for staged implementation",
+    "status": "APPROVED",
+    "revision": "r2",
+    "design_sha256": "e7aaed19d3eaeaead4fb309d22ba0b3a01812542cbe96da69f2342b6dbdcce3a",
+    "foundation_sha256": "0500d972bfb57b3e232b2738bebbc62cc9a9fb99876975c21f1d4931273ac8f3",
+    "rounds": 2,
+    "required_votes": 5,
+    "build_votes": 5,
+    "unresolved_material_blockers": 0,
+    "seats": [
+      {
+        "agent": "systems_review",
+        "model": "gpt-6-astra",
+        "verdict": "BUILD"
+      },
+      {
+        "agent": "evaluation_review",
+        "model": "gpt-6-sol",
+        "verdict": "BUILD",
+        "closures": {
+          "E1": "PASS",
+          "E2": "PASS"
+        }
+      },
+      {
+        "agent": "adversarial_review",
+        "model": "gpt-5.6-sol",
+        "verdict": "BUILD",
+        "closures": {
+          "A1": "PASS",
+          "A2": "PASS"
+        }
+      },
+      {
+        "agent": "product_review",
+        "model": "gpt-5.6-terra",
+        "verdict": "BUILD",
+        "closures": {
+          "P1": "PASS"
+        }
+      },
+      {
+        "agent": "cold_integration_review",
+        "model": "gpt-6-astra",
+        "verdict": "BUILD",
+        "cold_read": true
+      }
+    ],
+    "independence": "Isolated contexts and separate briefs; no peer verdicts disclosed before voting. All reviewers are OpenAI models; statistical independence is not claimed.",
+    "report": "/home/its1deat0r/Documents/Codex/2026-09-28/ho/outputs/teloforge-review.md"
+  },
+  "runtime_status": "Design only; no runtime implementation, benchmark, production certification or rollout.",
+  "name_status": "Teloforge is a working name; domain/package/trademark availability unverified."
+}

@@ -1,0 +1,47 @@
+name: Work item
+description: Propose a scoped, reviewable Teloforge change
+title: ""
+labels: []
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: User outcome
+      description: What observable outcome should Teloforge provide?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List observable completion conditions, including failures and limits.
+    validations:
+      required: true
+  - type: dropdown
+    id: milestone
+    attributes:
+      label: Milestone
+      options:
+        - T01 — Intent and governed execution
+        - T02 — Baseline measurement
+        - T03 — Bounded evolution and release
+        - T04 — Adapter/code extensions
+        - Documentation and project operations
+    validations:
+      required: true
+  - type: checkboxes
+    id: risk
+    attributes:
+      label: Affected boundaries
+      options:
+        - label: Intent, permissions, budgets, tenancy or private data
+        - label: Artifact collection, external effects, evaluation or release
+        - label: Schema migration, runner/protocol, isolation or security
+        - label: None of these (routine/reversible)
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks, constraints, and unknowns
+      description: Name the failure condition that should block this change.
+    validations:
+      required: true

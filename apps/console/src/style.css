@@ -1,0 +1,20 @@
+:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #18362f; background: #f4f3ee; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { width: min(100% - 3rem, 960px); margin: 0 auto; padding: 2rem 0 3rem; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-bottom: 2rem; border-bottom: 1px solid #ccd4cc; }
+.wordmark { font-size: 1rem; font-weight: 800; letter-spacing: .17em; }
+.badge { background: #e1e9df; padding: .5rem .8rem; border-radius: 2rem; font-size: .8rem; }
+.intro { padding: 3.5rem 0 2rem; }
+.eyebrow { color: #45685d; font-size: .82rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; letter-spacing: -.045em; margin: 1.3rem 0; }
+h2 { font-size: 1.2rem; letter-spacing: -.015em; }
+p { line-height: 1.65; max-width: 72ch; }
+.lede { font-size: 1.1rem; color: #486157; }
+.capabilities { list-style: none; padding: 0; border-top: 1px solid #ccd4cc; }
+.capabilities li { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid #ccd4cc; }
+.capabilities strong { font-size: .88rem; color: #695331; }
+.roadmap { background: #e5ebe2; border-left: 3px solid #476e59; padding: 1rem 1.5rem; margin-top: 2rem; }
+.muted, footer { color: #54665e; }
+footer { margin-top: 2rem; font-size: .85rem; }
+@media (max-width: 520px) { main { width: min(100% - 2rem, 960px); } header { align-items: flex-start; } .capabilities li { flex-direction: column; gap: .35rem; } }

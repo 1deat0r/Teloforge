@@ -1,0 +1,81 @@
+{
+  "project": "Teloforge",
+  "local_path_recorded": false,
+  "design_date": "2026-09-28",
+  "scope": "Project specification and supporting requirements for staged implementation; not runtime qualification",
+  "revision": "project-r2",
+  "spec_version": "0.3",
+  "decision": "BUILD",
+  "rounds": 2,
+  "final_tally": {
+    "BUILD": 5,
+    "CONDITIONAL": 0,
+    "REJECT": 0
+  },
+  "unresolved_material_blockers": 0,
+  "normative_spec": {
+    "path": "SPEC.md",
+    "selector": "bytes preceding <!-- END NORMATIVE SPEC -->",
+    "sha256": "712190480311998d0913ca9707a7db5bf3be72a75b73c9474cfd2e3f8d91dcef",
+    "bytes": 54429
+  },
+  "whole_spec_sha256": "8dc51b05ab62c1e116e9d4f8b6eacb4623b5fdc6409591bc2ed1caaec49c33d3",
+  "manifest": {
+    "path": "docs/reviews/round-2-manifest.json",
+    "sha256": "ae0a999c4b3bb3ad2ecd1b3d206cb0240d4b47721e3491971a78f2b484768af5"
+  },
+  "closure": {
+    "A1": {
+      "ruling": "CONFIRMED",
+      "disposition": "FIXED",
+      "reviewer_verification": "PASS",
+      "evidence": "docs/reviews/round-2-adversarial.md"
+    }
+  },
+  "reviewers": [
+    {
+      "seat": "Distributed systems",
+      "agent": "/root/project_systems",
+      "model": "gpt-6-astra",
+      "verdict": "BUILD",
+      "record": "docs/reviews/round-2-systems.md",
+      "record_sha256": "fc9eee851c97a8ee0a0161088b2dde1ae1847fadd6dda41093e2a5965cbcb14f"
+    },
+    {
+      "seat": "Adversarial authority and isolation",
+      "agent": "/root/project_adversarial",
+      "model": "gpt-5.6-sol",
+      "verdict": "BUILD",
+      "record": "docs/reviews/round-2-adversarial.md",
+      "record_sha256": "32e13f02de0102aea28e59f9007c274bb9acb526065f50188728728492398b7c"
+    },
+    {
+      "seat": "Product and developer feasibility",
+      "agent": "/root/project_product",
+      "model": "gpt-5.6-terra",
+      "verdict": "BUILD",
+      "record": "docs/reviews/round-2-product.md",
+      "record_sha256": "03092ebda8d6acbfc3091f5ef28656e80dde87a01b6d935d491ca83ee06ffd3d"
+    },
+    {
+      "seat": "Evaluation and statistics",
+      "agent": "/root/project_evaluation",
+      "model": "gpt-6-sol",
+      "verdict": "BUILD",
+      "record": "docs/reviews/round-2-evaluation.md",
+      "record_sha256": "852e023b203e4dab75c6aa00f6b329781e5a4464d51bf7d73ef348f04d7deff8"
+    },
+    {
+      "seat": "Cold integration",
+      "agent": "/root/project_cold_integration",
+      "model": "gpt-6-astra",
+      "verdict": "BUILD",
+      "record": "docs/reviews/round-2-cold-integration.md",
+      "record_sha256": "dc186f64a3264135328b040f086982beb113f129df01d698f76c75ee5851dfff"
+    }
+  ],
+  "parallelism": "Isolated parallel waves, maximum three active child reviewers; fresh cold seat in final round",
+  "runtime_builds_or_tests_run": false,
+  "performance_advantage_demonstrated": false,
+  "independence_limit": "All reviewers are OpenAI agents; four model variants; not human or cross-provider certification"
+}

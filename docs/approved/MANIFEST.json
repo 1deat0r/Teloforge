@@ -1,0 +1,90 @@
+{
+  "purpose": "Unmodified historical review bundle. Original host paths in snapshots are archival context.",
+  "files": [
+    {
+      "path": "keel-v2-design.md",
+      "sha256": "0500d972bfb57b3e232b2738bebbc62cc9a9fb99876975c21f1d4931273ac8f3",
+      "bytes": 16142
+    },
+    {
+      "path": "teloforge-architecture.html",
+      "sha256": "97b4cda9971ad319e76bc211db37ddb552ebee590097aa3ead70586aac7b6dc0",
+      "bytes": 810949
+    },
+    {
+      "path": "teloforge-architecture.json",
+      "sha256": "b3528d83a7c7166a8a6257d3e01074bdb36cc3749118fb19f434376ed0688983",
+      "bytes": 5420
+    },
+    {
+      "path": "teloforge-architecture.visual-check.1440x900.dark.png",
+      "sha256": "d652cd552cdf161f7e30b89b3c1a4844b25825067ff9c9aec0af574536118a28",
+      "bytes": 104441
+    },
+    {
+      "path": "teloforge-architecture.visual-check.1440x900.light.png",
+      "sha256": "9a8cb81dfe1d5f5ac1d1686f47adf79ff43c02d0537a3f2dcd59420bb7abd5aa",
+      "bytes": 103464
+    },
+    {
+      "path": "teloforge-architecture.visual-check.2048x1320.dark.png",
+      "sha256": "890bc16f7be08bbd08d8074d249eae7f0297e56834026c1fbe36cb2ad7969b5a",
+      "bytes": 149271
+    },
+    {
+      "path": "teloforge-architecture.visual-check.2048x1320.light.png",
+      "sha256": "35ee34878de360f0ac832e8d0c180a1e3ee51bb0747e77d14c12c6b16eb3c72e",
+      "bytes": 147338
+    },
+    {
+      "path": "teloforge-architecture.visual-check.html",
+      "sha256": "e744d877e9f3c7904ccef66d8b50740770dff077542b1425d824991e98924031",
+      "bytes": 1976
+    },
+    {
+      "path": "teloforge-architecture.visual-check.json",
+      "sha256": "e0cb3c584037da707a118cdd52b058ee1c9caae300498aa5ca229bd28eb34549",
+      "bytes": 17337
+    },
+    {
+      "path": "teloforge-design.md",
+      "sha256": "e7aaed19d3eaeaead4fb309d22ba0b3a01812542cbe96da69f2342b6dbdcce3a",
+      "bytes": 31621
+    },
+    {
+      "path": "teloforge-issues/01-intent-execution.md",
+      "sha256": "a904bd9b64adf276f789b5aea03ee6efac8508bef66b386e2a42faeb58560e23",
+      "bytes": 1952
+    },
+    {
+      "path": "teloforge-issues/02-baseline-measurement.md",
+      "sha256": "a069cb45709ce87f5ed886d9e178fcb6db4cc84354666d26f362d210dbbb2848",
+      "bytes": 1563
+    },
+    {
+      "path": "teloforge-issues/03-evolution-release.md",
+      "sha256": "05526821aebcff0240eb29f517e0c411c1b57be8c9a4e399dbfb4ab520f10c52",
+      "bytes": 1832
+    },
+    {
+      "path": "teloforge-issues/04-extension-qualification.md",
+      "sha256": "76f30ade87a615cd65ecdfbb8b3e02e963ed53318c2dc63f59df98b18ec06de7",
+      "bytes": 1473
+    },
+    {
+      "path": "teloforge-receipt.json",
+      "sha256": "343e9c01e99f3c3515e7a2533256285e8d67d9bac2128800b551925046fdcc10",
+      "bytes": 3642
+    },
+    {
+      "path": "teloforge-review-evidence/r1-design.md",
+      "sha256": "62fe71f5f3d8093990aaf1a6b5082d38d847d803a344a9f281e1c70750571b63",
+      "bytes": 17948
+    },
+    {
+      "path": "teloforge-review.md",
+      "sha256": "190ebb566adda4a52964b2ff46a5ccee1620c13ee6ee23007d9455a0e21d4e9e",
+      "bytes": 11243
+    }
+  ]
+}

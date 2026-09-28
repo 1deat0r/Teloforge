@@ -1,0 +1,65 @@
+{
+  "revision": "project-r2",
+  "files": [
+    {
+      "path": "SPEC.md",
+      "sha256": "712190480311998d0913ca9707a7db5bf3be72a75b73c9474cfd2e3f8d91dcef",
+      "bytes": 54429,
+      "scope": "normative prefix"
+    },
+    {
+      "path": "docs/CONTRACTS.md",
+      "sha256": "44dfab6a57d3194813e07e3fd292c4d341867b8c0411e35ded8a470c12ea5f4f",
+      "bytes": 4130,
+      "scope": "whole file"
+    },
+    {
+      "path": "docs/DATA_MODEL.md",
+      "sha256": "09a154e5c50439010dd5d2caf3e288b894913451c02864a55ba17ab97c7ad950",
+      "bytes": 5971,
+      "scope": "whole file"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "sha256": "3b11bb0e401d88ff734b86136f3314f175c6f94f02c61d7e7c4fd9d0ce69ff21",
+      "bytes": 2178,
+      "scope": "whole file"
+    },
+    {
+      "path": "docs/IMPLEMENTATION.md",
+      "sha256": "f9173565349eb005bf67a775fd6fda89a7374bbceb3361abc9910eda4839e25d",
+      "bytes": 4030,
+      "scope": "whole file"
+    },
+    {
+      "path": "docs/DEVELOPMENT.md",
+      "sha256": "bf7d11d4f756d4f7f44bc0777f66914b99a7b98941b20552bf3c54fef546f7a6",
+      "bytes": 3543,
+      "scope": "whole file"
+    },
+    {
+      "path": "docs/tasks/T01-intent-execution.md",
+      "sha256": "6eee4da78846d3b934208ea8d209fe62442376ea8e8b16a6cee0dea0dfb2e715",
+      "bytes": 2859,
+      "scope": "whole file"
+    },
+    {
+      "path": "docs/tasks/T02-baseline-measurement.md",
+      "sha256": "4bb5dbe6960bf6446cf838bc11dd3c9939b34743d4d956779d996730bde3206b",
+      "bytes": 1596,
+      "scope": "whole file"
+    },
+    {
+      "path": "docs/tasks/T03-evolution-release.md",
+      "sha256": "1b0b96899d322a811a4f134304a3be70e017fbd4ae34536f945020c3d2b467c6",
+      "bytes": 2688,
+      "scope": "whole file"
+    },
+    {
+      "path": "docs/tasks/T04-extension-qualification.md",
+      "sha256": "97dce48858e9c646d30c32cdafa5b019c45fa11d68e74a1a53af5d4d6fe1cd1c",
+      "bytes": 1326,
+      "scope": "whole file"
+    }
+  ]
+}

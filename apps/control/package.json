@@ -1,0 +1,17 @@
+{
+  "name": "@teloforge/control",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "node --env-file-if-exists=../../.env --watch --import tsx src/main.ts",
+    "start": "node --env-file-if-exists=../../.env dist/main.js"
+  },
+  "dependencies": {
+    "@teloforge/contracts": "workspace:*",
+    "@teloforge/kernel": "workspace:*",
+    "@teloforge/observability": "workspace:*"
+  }
+}

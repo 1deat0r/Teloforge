@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:teloforge:runner-envelope:0.1.0-draft",
+  "title": "Draft runner envelope",
+  "description": "Scaffold transport shape; not a qualified implementation of Paperclip PRP or a complete Teloforge protocol.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_version",
+    "message_id",
+    "kind",
+    "tenant_id",
+    "attempt_id",
+    "lease_generation",
+    "sequence",
+    "payload"
+  ],
+  "properties": {
+    "protocol_version": {
+      "const": "0.1.0-draft"
+    },
+    "message_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "lease.assign",
+        "run.cancel",
+        "run.event",
+        "event.ack"
+      ]
+    },
+    "tenant_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "attempt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lease_generation": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$"
+    },
+    "sequence": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$"
+    },
+    "payload": {
+      "type": "object"
+    }
+  }
+}

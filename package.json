@@ -1,0 +1,28 @@
+{
+  "name": "teloforge",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@11.18.0",
+  "engines": {
+    "node": "^24.11.0 || ^26.0.0",
+    "pnpm": "11.18.0"
+  },
+  "scripts": {
+    "dev": "pnpm run build:ts && pnpm --parallel --filter @teloforge/control --filter @teloforge/console run dev",
+    "dev:control": "pnpm run build:ts && pnpm --filter @teloforge/control run dev",
+    "dev:console": "pnpm run build:ts && pnpm --filter @teloforge/console run dev",
+    "build:ts": "pnpm --recursive --filter !@teloforge/console run build",
+    "build": "pnpm run build:ts && pnpm --filter @teloforge/console run build",
+    "typecheck": "pnpm run build:ts && pnpm --filter @teloforge/console run typecheck",
+    "runner:capabilities": "cargo run --package teloforge-runner -- capabilities",
+    "db:up": "docker compose --env-file .env -f infra/compose.yaml up -d postgres",
+    "db:down": "docker compose --env-file .env -f infra/compose.yaml down"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "tsx": "4.23.15",
+    "@types/node": "24.19.0"
+  }
+}
