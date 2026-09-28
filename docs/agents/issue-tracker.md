@@ -6,6 +6,6 @@ Use GitHub Issues when a durable shared record materially helps: long-running ba
 
 Pull requests are also optional. Use one for substantial or risky work, external contributions, useful outside review, concurrent isolation, or an explicit product/release requirement. A product task that creates a PR as its output does not require all repository changes to use PRs.
 
-This policy takes precedence over generic skill defaults that start every task with an issue or PR. Follow the user's explicit request about tracking and autonomy. Preserve repository security, release, and data-handling controls. The issue tracker is GitHub Issues in `1deat0r/Teloforge`; do not treat PRs as an issue-discovery surface for routine triage.
+This policy and `skill-autonomy.md` take precedence over generic skill defaults that start every task with an issue or PR or wait for tracker approval. Choose the tracker action from the task's value and this policy; do not ask the user to approve an ordinary issue, local task file, or PR decision. Preserve repository security, release, and data-handling controls. The issue tracker is GitHub Issues in `1deat0r/Teloforge`; do not treat PRs as an issue-discovery surface for routine triage.
 
 When the `triage` skill posts a comment, follow its required AI-generated triage disclaimer. Never create comments or other external messages without user authorization.

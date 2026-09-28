@@ -35,6 +35,8 @@ No repository license has been chosen. Obtain a license decision before publishi
 
 ## Matt Pocock engineering skills
 
+For every Matt Pocock skill used in this repository, follow the autonomous execution contract in `docs/agents/skill-autonomy.md`. Do not stop for a routine interview, plan approval, ticket-granularity vote, tracker choice, or PR confirmation.
+
 ### Issue tracker
 
 Use the current user request and local project context by default. GitHub Issues are optional for persistent multi-session work, dependencies, coordination, externally reported problems, and other cases where a durable shared record helps. See `docs/agents/issue-tracker.md`.
